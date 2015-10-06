@@ -1,4 +1,4 @@
-#pixel games builder
+#games builder
 ----
 ```
 # navigate to directory
