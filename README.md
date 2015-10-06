@@ -7,7 +7,7 @@ cd [directory]
 
 # create cordova project
 #----------------
-cordova create pixel-[game] com.fakesite.[game] pixel-[game]
+cordova create [directory] [reverse domain-style identifier] [application display name]
 
 # add plugins
 #----------------
@@ -33,6 +33,10 @@ at this stage you will want to copy the www folder into the cordova projects fol
 cordova platform add ios
 cordova platform add android
 
+cordova platform add amazon-fireos
+cordova platform add blackberry10
+cordova platform add firefoxos
+
 #prepare
 #----------------
 cordova prepare ios
@@ -44,8 +48,8 @@ cordova build android --release
 
 ##android only
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore 
-[path]/pixelgames.keystore 
-[path to game]/platforms/android/build/outputs/apk/android-release-unsigned.apk pixelgames
+[path]/[file.keystore]
+[path to game]/platforms/android/build/outputs/apk/android-release-unsigned.apk [keystore]
 
 zipalign [path to android apk]/Android\ SDK/build-tools/23.0.0/zipalign  -v 4 
 [path to game]/platforms/android/build/outputs/apk/android-release-unsigned.apk 
