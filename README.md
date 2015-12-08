@@ -5,6 +5,7 @@ So you want to build a html5/canvas based app in [cordova](http://cordova.apache
 
 
 Install cordova (if not installed)
+
  
 ```
 [sudo] npm install -g cordova
@@ -20,6 +21,7 @@ Create an app
 
 ```
 cordova create [directory] [reverse domain-style identifier] [application display name]
+cd [directory]
 ```
 
 Add some plugins
@@ -32,6 +34,25 @@ cordova plugin add cordova-plugin-whitelist
 cordova plugin add cordova-plugin-game-center
 cordova plugin add cordova-plugin-admobpro
 cordova plugin add org.pushandplay.cordova.apprate
+```
+
+More plugins
+
+```
+cordova plugin add cordova-plugin-network-information
+cordova plugin add cordova-plugin-battery-status
+cordova plugin add cordova-plugin-device-motion
+cordova plugin add cordova-plugin-device-orientation
+cordova plugin add cordova-plugin-geolocation
+cordova plugin add cordova-plugin-camera
+cordova plugin add cordova-plugin-media-capture
+cordova plugin add cordova-plugin-media
+cordova plugin add cordova-plugin-camera
+cordova plugin add phonegap-plugin-barcodescanner
+cordova plugin add cordova-plugin-calendar
+cordova plugin add phonegap-plugin-push
+cordova plugin add cordova-plugin-dialogs
+cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="YOUR_ANDROID_API_KEY_IS_HERE" --variable API_KEY_FOR_IOS="YOUR_IOS_API_KEY_IS_HERE"
 ```
 
 iOS9 long press fix (optional)
@@ -74,7 +95,7 @@ Build your platforms (i use xcode for ios build)
 cordova build android --release
 ```
 
-The fun Android stuff
+**The fun Android stuff**
 
 * make sure you have the [Android SDK](https://developer.android.com/sdk/index.html)
 * create a keystore file
@@ -99,7 +120,9 @@ at the "is this correct line" enter
 yes
 ```
 
-once you have built the release version of your Android app, sign and align it with the keystore you created above (DO NOT LOSE THIS FILE)
+once you have built the release version of your Android app, sign and align it with the keystore you created above 
+
+*---------------------(DO NOT LOSE THIS FILE)---------------------*
 
 ```
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore 
@@ -118,7 +141,7 @@ zipalign [path to android apk]/Android\ SDK/build-tools/23.0.0/zipalign  -v 4
 ```
 
 
-iOS specific config.xml
+**iOS specific config.xml**
 
 ```
 <preference name="DisallowOverscroll" value="true" />

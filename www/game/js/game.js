@@ -162,11 +162,11 @@ var game = (function(){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		canvas.style.backgroundColor = colors.background;
 
-		window.navigator.userAgent.indexOf("Firefox") != -1 || window.navigator.userAgent.indexOf("Chrome") != -1? 
+		window.navigator.userAgent.indexOf("Firefox") != -1 || window.navigator.userAgent.indexOf("Chrome") != -1 || window.navigator.userAgent.indexOf("OS X") != -1? 
 		canvas.addEventListener('mousedown', game.controls, false) :
 		canvas.addEventListener('touchstart', game.controls, false);
 
-		window.navigator.userAgent.indexOf("Firefox") != -1 || window.navigator.userAgent.indexOf("Chrome") != -1? 
+		window.navigator.userAgent.indexOf("Firefox") != -1 || window.navigator.userAgent.indexOf("Chrome") != -1 || window.navigator.userAgent.indexOf("OS X") != -1? 
 		canvas.addEventListener('mouseup', game.controls, false) :
 		canvas.addEventListener('touchend', game.controls, false);	
 
@@ -472,7 +472,8 @@ var game = (function(){
 */
 if(
 	window.navigator.userAgent.indexOf("Firefox") != -1 || 
-	window.navigator.userAgent.indexOf("Chrome") != -1
+	window.navigator.userAgent.indexOf("Chrome") != -1 ||
+	window.navigator.userAgent.indexOf("OS X") != -1
 )
 {
 	game.init();
